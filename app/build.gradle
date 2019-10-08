@@ -1,0 +1,70 @@
+apply plugin: 'com.android.application'
+
+project.ext {
+    retrofitVersion = "2.2.0"
+    daggerVersion = "2.14.1"
+}
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.1"
+    defaultConfig {
+        applicationId "com.example.gamingnews"
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    //implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+
+    // Retrofit
+    implementation 'com.google.code.gson:gson:2.7'
+    implementation "com.squareup.retrofit2:retrofit:$project.retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$project.retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$project.retrofitVersion"
+    // RxJava
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    // Dagger
+    implementation "com.google.dagger:dagger:$project.daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-compiler:$project.daggerVersion"
+    // Visualization
+    implementation 'androidx.recyclerview:recyclerview:1.1.0-beta04'
+
+   // implementation 'org.jetbrains:annotations-java5:15.0'
+    implementation 'androidx.cardview:cardview:1.0.0-beta01'
+    implementation 'com.google.android.material:material:1.0.0-beta01'
+    // OkHttp
+    implementation 'com.squareup.okhttp3:okhttp:4.2.1'
+    implementation 'com.squareup.okio:okio:1.7.0'
+    // HttpInterceptore
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.2.1'
+    //Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'androidx.coordinatorlayout:coordinatorlayout:1.1.0-beta01'
+
+
+
+
+
+
+}
